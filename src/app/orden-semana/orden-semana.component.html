@@ -1,0 +1,11 @@
+<div class="orden-semana">
+  <h2>Orden Semanal</h2>
+  <div *ngIf="isAdmin">
+    <label for="file-upload" class="custom-file-upload">
+      Seleccionar archivo
+    </label>
+    <input type="file" id="file-upload" (change)="onFileSelected($event)" />
+    <button (click)="guardarCambios()" class="guardar-button">Guardar Cambios</button>
+  </div>
+  <iframe [src]="archivoPdf | safe"></iframe>
+</div>

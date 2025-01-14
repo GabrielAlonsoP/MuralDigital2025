@@ -1,0 +1,37 @@
+/* Estilo global para la aplicación */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Color de fondo de la aplicación */
+    margin: 0;
+    padding: 0;
+  }
+  
+  div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Contenedor que envuelve ambos componentes */
+
+  .contenedor-flex {
+    display: flex;                  /* Aplica flexbox para alinear horizontalmente */
+    gap: 20px;                      /* Espacio de 20px entre los componentes */
+    justify-content: space-between; /* Alinea los componentes con espacio entre ellos */
+    padding: 20px;                  /* Aumentamos el padding para agrandar el contenedor */
+    max-width: 100%;                    /* Hace que el contenedor ocupe el 100% del ancho disponible */
+    box-sizing: border-box;         /* Asegura que el padding se incluye dentro del ancho total */
+    margin-top: 10px;               /* Aumentamos el espacio entre el header y los componentes */
+    background-color: #f4f4f4;      /* Fondo más claro para el contenedor, puedes quitarlo si no lo deseas */
+  }
+
+  app-pizarra, app-orden-semana {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;                           /* Ambos componentes ocupan el mismo espacio */
+    max-width: 100%;                    /* Limita el ancho de los componentes a un % */
+    min-height: 100%;                 /* Aumentamos la altura mínima de los componentes */
+    box-sizing: border-box;           /* Asegura que el padding esté incluido en el tamaño total */
+  }

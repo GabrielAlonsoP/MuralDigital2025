@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<!-- Este es el contenedor de los componentes estáticos que siempre se deben mostrar -->
+<div class="contenedor-flex">
+    <app-pizarra></app-pizarra> <!-- Pizarra en el lado izquierdo -->
+    <app-orden-semana></app-orden-semana> <!-- Orden de la semana al lado derecho -->
+</div>  
+
+<app-personal-destacado></app-personal-destacado>
+<app-cumpleanos></app-cumpleanos>
+<!-- El <router-outlet> solo debe usarse para la navegación de rutas dinámicas, no para mostrar estos componentes estáticos -->
+<router-outlet></router-outlet>

@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.modal-title {
+  color: #1a2f0f;  /* Verde oscuro militar para el título */
+  font-weight: 500;
+}
+
+.form-control:focus {
+  border-color: #4b5320;  /* Verde oliva militar */
+  box-shadow: 0 0 0 0.2rem rgba(75, 83, 32, 0.25);  /* Sombra verde oliva */
+}
+
+/* Color principal del botón */
+.btn-primary {
+  background-color: #4b5320;  /* Verde oliva militar */
+  border-color: #4b5320;
+  color: #fff;
+}
+
+/* Color al pasar el mouse sobre el botón */
+.btn-primary:hover {
+  background-color: #3d4419;  /* Verde oliva más oscuro */
+  border-color: #3d4419;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f4f5f0;  /* Fondo beige claro militar */
+}
+
+/* Colores para los inputs */
+.form-control {
+  border-color: #8b8c7a;  /* Gris verdoso */
+  background-color: #fcfcf7;  /* Beige muy claro */
+}
+
+/* Color del botón secundario (Cancelar) */
+.btn-secondary {
+  background-color: #767668;  /* Gris verdoso */
+  border-color: #767668;
+}
+
+.btn-secondary:hover {
+  background-color: #5c5c4d;  /* Gris verdoso más oscuro */
+  border-color: #5c5c4d;
+}

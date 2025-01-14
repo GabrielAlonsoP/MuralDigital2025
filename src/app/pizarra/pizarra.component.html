@@ -1,0 +1,22 @@
+<div class="pizarra">
+  <h2>Pizarrón digital</h2>
+  
+  <!-- Vista para administrador -->
+  <ng-container *ngIf="isAdmin">
+    <textarea 
+      [(ngModel)]="contenido" 
+      placeholder="Apuntes y/o notas semanales" 
+      (ngModelChange)="guardarContenido()">
+    </textarea>
+    <div class="info">
+      <small>Los cambios se guardan automáticamente</small>
+    </div>
+  </ng-container>
+
+  <!-- Vista para usuarios normales -->
+  <ng-container *ngIf="!isAdmin">
+    <div class="contenido-readonly">
+      {{ contenido }}
+    </div>
+  </ng-container>
+</div>

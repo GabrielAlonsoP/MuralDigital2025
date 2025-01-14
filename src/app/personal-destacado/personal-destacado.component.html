@@ -1,0 +1,40 @@
+<div class="personal-destacado">
+  <h2>Personal Destacado</h2>
+
+  <!-- Botón para agregar nuevo empleado (solo visible para admin) -->
+  <div *ngIf="isAdmin" class="agregar-nuevo">
+    <button *ngIf="!mostrarFormularioNuevo" (click)="mostrarFormularioNuevo = true" class="btn-agregar">
+      Agregar
+    </button>
+
+    <!-- Formulario para nuevo empleado -->
+    <div *ngIf="mostrarFormularioNuevo" class="formulario-nuevo">
+      <input type="text" [(ngModel)]="nuevoEmpleado.nombre" placeholder="Nombre" class="text-input" />
+      <input type="text" [(ngModel)]="nuevoEmpleado.grado" placeholder="Grado" class="text-input" />
+      <input type="file" (change)="onFileSelected(-1, $event)" class="file-input" />
+      <div class="botones-nuevo">
+        <button (click)="agregarEmpleado()" class="btn-guardar">Guardar</button>
+        <button (click)="mostrarFormularioNuevo = false" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="persona">
+    <div *ngFor="let empleado of empleados; let i = index" class="empleado">
+      <img [src]="empleado.foto" alt="Empleado Destacado" />
+      <p>{{ empleado.nombre }} <br> {{ empleado.grado }}</p>
+      
+      <div *ngIf="isAdmin" class="acciones-admin">
+        <button (click)="editarEmpleado(i)" class="edit-button">Editar</button>
+        <button (click)="eliminarEmpleado(i)" class="btn-eliminar">Eliminar</button>
+        
+        <div *ngIf="editandoEmpleado === i" class="edit-container">
+          <input type="file" (change)="onFileSelected(i, $event)" class="file-input" />
+          <input type="text" [(ngModel)]="empleado.nombre" placeholder="Nuevo nombre" class="text-input" />
+          <input type="text" [(ngModel)]="empleado.grado" placeholder="Nuevo grado" class="text-input" />
+          <button (click)="guardarCambios()" class="guardar-button">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

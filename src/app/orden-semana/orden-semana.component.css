@@ -1,0 +1,51 @@
+/* Estilo para el input de tipo file (selección de archivo) */
+input[type="file"] {
+  display: none; /* Oculta el botón real del archivo */
+}
+
+/* Estilo para el contenedor de la orden de la semana */
+.orden-semana {
+  background-color: #828866;
+  padding: 15px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Añadido para permitir posicionamiento relativo */
+}
+
+/* Estilo para el botón de seleccionar archivo */
+.orden-semana .custom-file-upload {
+  position: absolute; /* Posiciona el botón en relación con el contenedor */
+  top: 15px; /* Ajusta la distancia desde el borde superior */
+  right: 15px; /* Ajusta la distancia desde el borde derecho */
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 6px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para el botón */
+.orden-semana .custom-file-upload:hover {
+  background-color: #45a049; /* Color de fondo al hacer hover */
+}
+
+/* Estilo específico para la orden de la semana */
+.orden-semana iframe {
+  width: 70%;
+  height: 600px;
+  border: none;
+  margin: 0 auto;
+}

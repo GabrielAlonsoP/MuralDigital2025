@@ -1,0 +1,9 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.login-dialog .mat-mdc-dialog-container {
+    padding: 0;
+  }
+  
+  .login-dialog .mat-mdc-dialog-surface {
+    border-radius: 8px;
+  }

@@ -1,0 +1,228 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+:host .personal-destacado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: #D5CFB6 !important;
+  border: 1px solid #2F2F1E;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 97%;
+  margin: 20px auto;
+}
+
+/* Variables de colores militares */
+:root {
+  --olive-drab: #544E38;    /* Color principal */
+  --camo-green: #4A5D23;    /* Color secundario */
+  --sand-beige: #D5CFB6;    /* Color claro */
+  --army-brown: #3E3B2C;    /* Color oscuro */
+  --desert-tan: #C2B280;    /* Color de acento */
+}
+
+.personal-destacado h2 {
+  color: var(--army-brown);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.persona {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center; /* Cambiado a center */
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.empleado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border: 2px solid var(--olive-drab);
+  width: 250px; /* Ancho fijo */
+  flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Nuevo estilo para el contenedor de edición */
+.empleado > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.personal-destacado img {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid var(--olive-drab);
+  padding: 3px;
+  background-color: var(--desert-tan);
+  transition: transform 0.3s ease;
+}
+
+.personal-destacado img:hover {
+  transform: scale(1.05);
+}
+
+.personal-destacado p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 12px;
+  color: var(--army-brown);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Estilos para el botón Editar */
+button {
+  background-color: var(--camo-green);
+  color: var(--sand-beige);
+  border: 2px solid var(--olive-drab);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  width: 80%; /* Ancho relativo al contenedor */
+  max-width: 200px;
+}
+
+button:hover {
+  background-color: var(--olive-drab);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los inputs */
+input[type="text"] {
+  padding: 10px;
+  margin: 8px auto;
+  width: 90%; /* Ancho relativo al contenedor */
+  max-width: 200px;
+  background-color: var(--sand-beige);
+  border: 2px solid var(--olive-drab);
+  font-size: 14px;
+  text-align: center;
+  color: var(--army-brown);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: var(--camo-green);
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 93, 35, 0.5);
+}
+
+input[type="file"] {
+  margin: 10px auto;
+  padding: 8px;
+  border: 2px solid var(--olive-drab);
+  background-color: var(--desert-tan);
+  font-size: 14px;
+  width: 90%; /* Ancho relativo al contenedor */
+  max-width: 200px;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: var(--sand-beige);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+  .persona {
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .empleado {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-destacado {
+    padding: 15px;
+  }
+  
+  .empleado {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.agregar-nuevo {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.btn-agregar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  width: 150px;
+}
+
+.btn-agregar:hover {
+  background-color: #377a3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formulario-nuevo {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.botones-nuevo {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-guardar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-cancelar {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #f44336;
+  color: white;
+  margin-left: 10px;
+}
+
+.acciones-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

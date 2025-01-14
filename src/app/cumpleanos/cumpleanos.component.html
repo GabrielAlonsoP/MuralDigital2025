@@ -1,0 +1,42 @@
+<div class="cumpleanos">
+  <h2>Cumpleaños del mes</h2>
+  
+  <!-- Botón para agregar nuevo cumpleañero (solo visible para admin) -->
+  <div *ngIf="isAdmin" class="agregar-nuevo">
+    <button *ngIf="!mostrarFormularioNuevo" (click)="mostrarFormularioNuevo = true" class="btn-agregar">
+      Agregar
+    </button>
+
+    <!-- Formulario para nuevo cumpleañero -->
+    <div *ngIf="mostrarFormularioNuevo" class="formulario-nuevo">
+      <input type="text" [(ngModel)]="nuevoCumpleanero.nombre" placeholder="Nombre" />
+      <input type="text" [(ngModel)]="nuevoCumpleanero.grado" placeholder="Grado" />
+      <input type="text" [(ngModel)]="nuevoCumpleanero.fecha" placeholder="Fecha" />
+      <input type="file" (change)="cambiarFoto(-1, $event)" />
+      <div class="botones-nuevo">
+        <button (click)="agregarCumpleanero()" class="btn-guardar">Guardar</button>
+        <button (click)="mostrarFormularioNuevo = false" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cumpleanero">
+    <div *ngFor="let cumpleanero of cumpleaneros; let i = index" class="personal">
+      <img [src]="cumpleanero.foto" alt="Cumpleañero" />
+      <p>{{ cumpleanero.nombre }} <br> {{ cumpleanero.grado }} <br> {{ cumpleanero.fecha }}</p>
+      
+      <div *ngIf="isAdmin" class="acciones-admin">
+        <button (click)="editarCumpleanero(i)" class="btn-editar">Editar</button>
+        <button (click)="eliminarCumpleanero(i)" class="btn-eliminar">Eliminar</button>
+        
+        <div *ngIf="editandoCumpleanero === i" class="formulario-edicion">
+          <input type="text" [(ngModel)]="cumpleanero.nombre" placeholder="Nuevo nombre" />
+          <input type="text" [(ngModel)]="cumpleanero.grado" placeholder="Nuevo grado" />
+          <input type="text" [(ngModel)]="cumpleanero.fecha" placeholder="Nueva fecha" />
+          <input type="file" (change)="cambiarFoto(i, $event)" />
+          <button (click)="guardarCambios()" class="btn-guardar">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
